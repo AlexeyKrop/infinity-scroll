@@ -49,7 +49,7 @@ export const EventsPage = () => {
 
     const renderContent = () => {
         if (isInitialLoading) {
-            return <Skeleton count={5}/>;
+            return <Skeleton count={7}/>;
         }
 
         if (error) {
