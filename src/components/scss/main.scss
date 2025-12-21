@@ -1,0 +1,18 @@
+@use 'base';
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  position: relative;
+  box-sizing: border-box;
+  letter-spacing: 0;
+}
+
+
+ul, ol {
+  list-style-position: outside;
+  margin-left: 1em;
+}
