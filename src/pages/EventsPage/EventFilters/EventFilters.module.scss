@@ -14,3 +14,28 @@
     max-width: 100%;
   }
 }
+
+.clear_button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: transparent;
+  border: 1px solid base.$color-border;
+  border-radius: base.$radius-md;
+  color: base.$gray-500;
+  @include base.text-sm;
+  cursor: pointer;
+  transition: all base.$transition-base;
+  align-self: flex-start;
+
+  &:hover {
+    background: base.$color-bg-primary;
+    border-color: base.$gray-600;
+    color: base.$color-text-primary;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}

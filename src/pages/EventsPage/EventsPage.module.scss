@@ -5,16 +5,19 @@
 }
 
 .filters {
-  position: sticky;
   top: 0;
   z-index: 10;
   background: base.$color-bg-primary;
   padding-bottom: 16px;
   border-bottom: 1px solid base.$color-border;
+
+  &.sticky {
+    position: sticky;
+    box-shadow: base.$shadow-md;
+  }
 }
 
 .content {
-  flex: 1;
   padding-top: 16px;
 }
 

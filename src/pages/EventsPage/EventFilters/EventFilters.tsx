@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import {X} from 'lucide-react';
 import {getUniqueApps} from '../../../services';
 import {useDebounce} from '../../../hooks';
 import type {EventFiltersType} from '../../../types';
@@ -9,6 +10,8 @@ import styles from './EventFilters.module.scss';
 type EventFiltersProps = {
     filters: EventFiltersType;
     onChange: (filters: EventFiltersType) => void;
+    onClear: () => void;
+    hasActiveFilters: boolean;
 };
 
 type AppOption = {
@@ -17,7 +20,7 @@ type AppOption = {
 };
 
 export const EventFilters = (props: EventFiltersProps) => {
-    const {filters, onChange} = props;
+    const {filters, onChange, hasActiveFilters, onClear} = props;
     const [searchText, setSearchText] = useState<string>(filters.searchText || '');
 
     const debouncedSearchText = useDebounce(searchText, 500);
@@ -48,6 +51,12 @@ export const EventFilters = (props: EventFiltersProps) => {
         onChange({...filters, dateFrom: undefined, dateTo: undefined});
     };
 
+    const handleClearAll = () => {
+        setSearchText('');
+        onClear();
+    };
+
+
     return (
         <div className={styles.filters}>
             <div className={styles.filters_item}>
@@ -76,6 +85,16 @@ export const EventFilters = (props: EventFiltersProps) => {
                     placeholder="Выбрать период"
                 />
             </div>
+            {hasActiveFilters && (
+                <button
+                    onClick={handleClearAll}
+                    className={styles.clear_button}
+                    type="button"
+                >
+                    <X size={16}/>
+                    Сбросить фильтры
+                </button>
+            )}
         </div>
     );
 };
