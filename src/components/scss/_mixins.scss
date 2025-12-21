@@ -1,0 +1,104 @@
+@use 'variables';
+
+// Typography
+@mixin text-xxs($weight: 400) {
+  font-size: 10px;
+  font-weight: $weight;
+}
+
+@mixin text-xs($weight: 400) {
+  font-size: 11px;
+  font-weight: $weight;
+}
+
+@mixin text-sm($weight: 400) {
+  font-size: 12px;
+  font-weight: $weight;
+}
+
+@mixin text-base($weight: 400) {
+  font-size: 14px;
+  font-weight: $weight;
+}
+
+@mixin text-lg($weight: 400) {
+  font-size: 16px;
+  font-weight: $weight;
+}
+
+@mixin text-xl($weight: 400) {
+  font-size: 20px;
+  font-weight: $weight;
+}
+
+@mixin lg() {
+  @media screen and (max-width: #{variables.$container_size_hg}) {
+    @content;
+  }
+}
+
+@mixin md() {
+  @media screen and (max-width: #{variables.$container_size_lg}) {
+    @content;
+  }
+}
+
+@mixin sm() {
+  @media screen and (max-width: #{variables.$container_size_md}) {
+    @content;
+  }
+}
+
+@mixin tn() {
+  @media screen and (max-width: #{variables.$container_size_sm}) {
+    @content;
+  }
+}
+
+@mixin container($withVerticalPadding: true) {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: variables.$container_horizontal_padding_hg;
+  padding-right: variables.$container_horizontal_padding_hg;
+
+  @if $withVerticalPadding {
+    padding-top: variables.$container_vertical_padding;
+    padding-bottom: variables.$container_vertical_padding;
+  }
+
+  @include lg {
+    padding-left: variables.$container_horizontal_padding_lg;
+    padding-right: variables.$container_horizontal_padding_lg;
+  }
+
+  @include md {
+    padding-left: variables.$container_horizontal_padding_md;
+    padding-right: variables.$container_horizontal_padding_md;
+
+    @if $withVerticalPadding {
+      padding-top: variables.$container_vertical_padding_md;
+      padding-bottom: variables.$container_vertical_padding_md;
+    }
+  }
+
+  @include sm {
+    padding-left: variables.$container_horizontal_padding_sm;
+    padding-right: variables.$container_horizontal_padding_sm;
+
+    @if $withVerticalPadding {
+      padding-top: variables.$container_vertical_padding_sm;
+      padding-bottom: variables.$container_vertical_padding_sm;
+    }
+  }
+
+  @include tn {
+    padding-left: variables.$container_horizontal_padding_tn;
+    padding-right: variables.$container_horizontal_padding_tn;
+
+    @if $withVerticalPadding {
+      padding-top: variables.$container_vertical_padding_tn;
+      padding-bottom: variables.$container_vertical_padding_tn;
+    }
+  }
+}

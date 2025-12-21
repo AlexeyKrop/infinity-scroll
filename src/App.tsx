@@ -1,11 +1,10 @@
+import {EventsPage} from "./pages";
 
 
 function App() {
 
   return (
-    <>
-
-    </>
+        <EventsPage />
   )
 }
 

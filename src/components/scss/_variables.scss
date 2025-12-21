@@ -1,5 +1,6 @@
 // Colors
 $gray-50: #fafafa;
+$gray-100: #f5f5f5;
 $gray-400: #a3a3a3;
 $gray-500: #737373;
 $gray-600: #525252;
@@ -7,48 +8,32 @@ $gray-700: #404040;
 $gray-800: #262626;
 $gray-900: #171717;
 
-$red-300: #fca5a5;
 $red-500: #ef4444;
-$red-950: #450a0a;
+$red-600: #dc2626;
 
-$yellow-300: #fde047;
 $yellow-400: #facc15;
-$yellow-950: #422006;
+$yellow-500: #eab308;
 
-$blue-300: #93c5fd;
 $blue-500: #3b82f6;
-$blue-950: #172554;
-
-$green-300: #86efac;
-$green-400: #4ade80;
-$green-950: #052e16;
+$blue-600: #2563eb;
 
 // Text
 $color-text-primary: $gray-50;
 $color-text-secondary: $gray-400;
-$color-text-muted: $gray-600;
 
 // Backgrounds
 $color-bg-primary: $gray-900;
-$color-bg-secondary: $gray-800;
-$color-bg-card: #1f1f1f;
+$color-bg-card: $gray-800;
 
 // States
-$color-error-bg: rgba($red-950, 0.4);
+$color-error-bg: rgba($red-600, 0.15);
 $color-error-border: $red-500;
-$color-error-text: $red-300;
 
-$color-warning-bg: rgba($yellow-950, 0.4);
+$color-warning-bg: rgba($yellow-500, 0.15);
 $color-warning-border: $yellow-400;
-$color-warning-text: $yellow-300;
 
-$color-info-bg: rgba($blue-950, 0.4);
+$color-info-bg: rgba($blue-600, 0.15);
 $color-info-border: $blue-500;
-$color-info-text: $blue-300;
-
-$color-success-bg: rgba($green-950, 0.4);
-$color-success-border: $green-400;
-$color-success-text: $green-300;
 
 // Borders
 $color-border: $gray-700;
@@ -65,3 +50,19 @@ $shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
 
 // transition
 $transition-base: 0.2s ease;
+
+/* Screen sizes */
+$container_size_hg: 1800px;
+$container_size_lg: 1280px;
+$container_size_md: 858px;
+$container_size_sm: 480px;
+$container_size_tn: 360px;
+$container_horizontal_padding_hg: 56px;
+$container_horizontal_padding_lg: 32px;
+$container_horizontal_padding_md: 24px;
+$container_horizontal_padding_sm: 20px;
+$container_horizontal_padding_tn: 16px;
+$container_vertical_padding: 32px;
+$container_vertical_padding_md: 28px;
+$container_vertical_padding_sm: 20px;
+$container_vertical_padding_tn: 16px;

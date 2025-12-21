@@ -1,0 +1,33 @@
+@use '../../components/scss/base';
+
+.page {
+  @include base.container;
+}
+
+.filters {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: base.$color-bg-primary;
+  padding-bottom: 16px;
+  border-bottom: 1px solid base.$color-border;
+}
+
+.content {
+  flex: 1;
+  padding-top: 16px;
+}
+
+.error,
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  @include base.text-base;
+  color: base.$color-text-secondary;
+}
+
+.error {
+  color: base.$color-error-border;
+}

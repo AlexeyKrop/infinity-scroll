@@ -1,1 +1,1 @@
-export type {SysLogEventType, SysLogEvent, EventFilters, GetEventListResponse, GetEventListParams} from './eventTypes'
+export type {SysLogEventType, SysLogEvent, EventFiltersType, GetEventListResponse, GetEventListParams} from './eventTypes'

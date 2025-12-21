@@ -1,0 +1,66 @@
+@use '../scss/base';
+
+.skeleton {
+  padding: 16px;
+  margin-bottom: 8px;
+  display: flex;
+  gap: 16px;
+  background: base.$color-bg-card;
+  border-radius: base.$radius-md;
+  border-left: 4px solid base.$color-border;
+}
+
+.circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(
+                  90deg,
+                  rgba(255, 255, 255, 0.05) 0%,
+                  rgba(255, 255, 255, 0.1) 50%,
+                  rgba(255, 255, 255, 0.05) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.line {
+  height: 16px;
+  border-radius: base.$radius-sm;
+  background: linear-gradient(
+                  90deg,
+                  rgba(255, 255, 255, 0.05) 0%,
+                  rgba(255, 255, 255, 0.1) 50%,
+                  rgba(255, 255, 255, 0.05) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+
+  &.short {
+    width: 60%;
+  }
+
+  &.medium {
+    width: 40%;
+  }
+
+  &.long {
+    width: 90%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

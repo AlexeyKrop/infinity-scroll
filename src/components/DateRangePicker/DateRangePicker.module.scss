@@ -1,0 +1,202 @@
+@use '../scss/base';
+
+.date_picker {
+  &_wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: base.$color-bg-primary;
+    border: 1px solid base.$color-border;
+    border-radius: base.$radius-md;
+    transition: border-color base.$transition-base;
+
+    &:hover {
+      border-color: base.$gray-600;
+    }
+
+    &:focus-within {
+      border-color: base.$blue-500;
+    }
+
+    &_inner {
+      flex: 1;
+      display: flex;
+    }
+  }
+}
+
+.date_input {
+  width: 100%;
+  padding: 10px 36px 10px 40px;
+  background: transparent;
+  border: none;
+  color: base.$color-text-secondary;
+  @include base.text-base;
+  outline: none;
+  cursor: pointer;
+
+  &::placeholder {
+    color: base.$color-text-secondary;
+  }
+}
+
+.calendar {
+  &_icon {
+    position: absolute;
+    left: 12px;
+    color: base.$color-text-secondary;
+    pointer-events: none;
+    z-index: 1;
+    top: 48%;
+    transform: translateY(-50%);
+  }
+
+  &_container {
+    :global(.react-datepicker) {
+      background: base.$color-bg-card;
+      border: 1px solid base.$color-border;
+      border-radius: base.$radius-md;
+      box-shadow: base.$shadow-md;
+      font-family: inherit;
+    }
+
+    :global(.react-datepicker__triangle) {
+      display: none;
+    }
+
+    :global(.react-datepicker__header) {
+      background: base.$color-bg-card;
+      border-bottom: 1px solid base.$color-border;
+      padding-top: 12px;
+      border-radius: base.$radius-md base.$radius-md 0 0;
+    }
+
+    :global(.react-datepicker__current-month) {
+      color: base.$color-text-secondary;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    :global(.react-datepicker__day-names) {
+      margin-bottom: 4px;
+    }
+
+    :global(.react-datepicker__day-name) {
+      color: base.$gray-400;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      width: 40px;
+      line-height: 40px;
+      margin: 2px;
+    }
+
+    :global(.react-datepicker__navigation) {
+      width: 32px;
+      height: 32px;
+      border-radius: base.$radius-sm;
+      transition: background base.$transition-base;
+
+      &:hover {
+        background: base.$color-bg-primary;
+      }
+    }
+
+    :global(.react-datepicker__navigation-icon::before) {
+      border-color: base.$color-text-primary;
+      border-width: 2px 2px 0 0;
+      top: 10px;
+    }
+
+    :global(.react-datepicker__month) {
+      margin: 8px;
+    }
+
+    :global(.react-datepicker__day) {
+      color: base.$color-text-primary;
+      width: 40px;
+      line-height: 40px;
+      margin: 2px;
+      border-radius: base.$radius-sm;
+      font-size: 14px;
+      transition: all base.$transition-base;
+
+      &:hover {
+        background: base.$color-bg-primary;
+      }
+    }
+
+    :global(.react-datepicker__day--selected),
+    :global(.react-datepicker__day--range-start),
+    :global(.react-datepicker__day--range-end) {
+      background: base.$blue-500;
+      color: white;
+      font-weight: 600;
+
+      &:hover {
+        background: base.$blue-600;
+      }
+    }
+
+    :global(.react-datepicker__day--in-selecting-range),
+    :global(.react-datepicker__day--in-range) {
+      background: rgba(base.$blue-500, 0.2);
+      color: base.$color-text-secondary;
+
+      &:hover {
+        background: rgba(base.$blue-500, 0.3);
+      }
+    }
+
+    :global(.react-datepicker__day--keyboard-selected) {
+      background: base.$color-bg-primary;
+      color: base.$color-text-secondary;
+
+      &:hover {
+        background: rgba(base.$blue-500, 0.2);
+      }
+    }
+
+    :global(.react-datepicker__day--today) {
+      font-weight: 600;
+      color: base.$blue-500;
+      background: transparent;
+
+      &:hover {
+        background: base.$color-bg-primary;
+      }
+    }
+
+    :global(.react-datepicker__day--disabled) {
+      color: base.$gray-700;
+      cursor: not-allowed;
+
+      &:hover {
+        background: transparent;
+      }
+    }
+
+    :global(.react-datepicker__day--outside-month) {
+      color: base.$color-text-secondary;
+    }
+  }
+}
+
+.clear_button {
+  position: absolute;
+  right: 8px;
+  padding: 4px;
+  background: none;
+  border: none;
+  color: base.$gray-500;
+  cursor: pointer;
+  transition: all base.$transition-base;
+  border-radius: base.$radius-sm;
+  z-index: 1;
+
+  &:hover {
+    color: base.$red-500;
+    background: rgba(base.$red-500, 0.1);
+  }
+}

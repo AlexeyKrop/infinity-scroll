@@ -8,7 +8,7 @@ export type SysLogEvent = {
     message: string;
 }
 
-export type EventFilters = {
+export type EventFiltersType = {
     searchText?: string;
     app?: string;
     dateFrom?: Date;
@@ -18,7 +18,7 @@ export type EventFilters = {
 export type GetEventListParams = {
     pageSize: number;
     pageNum: number;
-    filters?: EventFilters;
+    filters?: EventFiltersType;
 }
 
 export type GetEventListResponse = {

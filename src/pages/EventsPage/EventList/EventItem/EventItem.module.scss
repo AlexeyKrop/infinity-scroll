@@ -1,0 +1,103 @@
+@use '../../../../components/scss/base';
+
+.eventItem {
+  padding: 16px;
+  margin-bottom: 8px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: base.$color-bg-primary;
+  border-radius: base.$radius-md;
+  border-left: 4px solid;
+  box-shadow: base.$shadow-sm;
+  transition: all base.$transition-base;
+
+  &:hover {
+    box-shadow: base.$shadow-md;
+  }
+
+  &.error {
+    border-color: base.$color-error-border;
+    background-color: base.$color-error-bg;
+    color: base.$color-error-border;
+  }
+
+  &.warning {
+    border-color: base.$color-warning-border;
+    background-color: base.$color-warning-bg;
+    color: base.$color-warning-border;
+  }
+
+  &.info {
+    border-color: base.$color-info-border;
+    background-color: base.$color-info-bg;
+    color: base.$color-info-border;
+  }
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2px;
+}
+
+.icon {
+  color: currentColor;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: base.$radius-full;
+  @include base.text-sm(700);
+  text-transform: uppercase;
+
+  &.error {
+    background-color: base.$color-error-border;
+    color: base.$gray-50;
+  }
+
+  &.warning {
+    background-color: base.$color-warning-border;
+    color: base.$gray-900;
+  }
+
+  &.info {
+    background-color: base.$color-info-border;
+    color: base.$gray-50;
+  }
+}
+
+.date {
+  @include base.text-base;
+  color: base.$color-text-secondary;
+}
+
+.message {
+  margin: 0 0 8px 0;
+  @include base.text-lg;
+  color: base.$color-text-primary;
+  word-break: break-word;
+}
+
+.app {
+  @include base.text-base;
+  color: base.$color-text-secondary;
+
+  strong {
+    color: base.$color-text-primary;
+    font-weight: 600;
+  }
+}

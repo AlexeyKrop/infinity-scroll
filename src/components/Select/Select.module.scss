@@ -1,0 +1,68 @@
+@use '../scss/base';
+
+.select {
+  &_wrapper {
+    position: relative;
+  }
+
+  &_button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 12px;
+    background: base.$color-bg-primary;
+    border: 1px solid base.$color-border;
+    border-radius: base.$radius-md;
+    color: base.$color-text-secondary;
+    @include base.text-base;
+    cursor: pointer;
+    transition: border-color base.$transition-base;
+
+    &:hover {
+      border-color: base.$gray-600;
+    }
+
+    &:focus {
+      border-color: base.$blue-500;
+      outline: none;
+    }
+  }
+
+  &_options {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: base.$color-bg-card;
+    border: 1px solid base.$color-border;
+    border-radius: base.$radius-md;
+    padding: 4px;
+    box-shadow: base.$shadow-md;
+    z-index: 100;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  &_option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-radius: base.$radius-sm;
+    color: base.$color-text-primary;
+    @include base.text-base;
+    cursor: pointer;
+    outline: none;
+
+    &.active {
+      background: base.$color-bg-primary;
+    }
+
+    .selected {
+      font-weight: 600;
+      color: base.$blue-500;
+    }
+  }
+}

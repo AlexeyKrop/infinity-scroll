@@ -37,7 +37,7 @@ export const getEventList = async (params: GetEventListParams): Promise<GetEvent
 
     const filteredEvents = filterEvents(stubData, filters);
 
-    const startIndex = pageNum * pageSize;
+    const startIndex = (pageNum - 1) * pageSize;
     const endIndex = startIndex + pageSize;
     const events = filteredEvents.slice(startIndex, endIndex);
 

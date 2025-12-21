@@ -1,0 +1,16 @@
+@use '../../../components/scss/base';
+
+.filters {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  background: base.$color-bg-card;
+  border-radius: base.$radius-md;
+  flex-wrap: wrap;
+
+  &_item {
+    flex: 1;
+    min-width: 200px;
+    max-width: 100%;
+  }
+}

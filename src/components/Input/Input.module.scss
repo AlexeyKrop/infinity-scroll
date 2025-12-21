@@ -1,0 +1,40 @@
+@use '../scss/base';
+
+.wrapper {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: base.$color-text-secondary;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  background: base.$color-bg-primary;
+  border: 1px solid base.$color-border;
+  border-radius: base.$radius-md;
+  color: base.$color-text-primary;
+  @include base.text-base;
+  transition: border-color base.$transition-base;
+
+  &::placeholder {
+    color: base.$color-text-secondary;
+  }
+
+  &:focus {
+    border-color: base.$blue-500;
+    outline: none;
+  }
+
+  &_with_icon {
+    padding-left: 40px;
+  }
+}
