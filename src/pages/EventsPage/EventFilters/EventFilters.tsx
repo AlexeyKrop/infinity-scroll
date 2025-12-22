@@ -3,7 +3,7 @@ import {X} from 'lucide-react';
 import {getUniqueApps} from '../../../services';
 import {useDebounce} from '../../../hooks';
 import type {EventFiltersType} from '../../../types';
-import {DateRangePicker, Select, Input} from '../../../components';
+import {DateRangePicker, Select, Input, Button} from '../../../components';
 
 import styles from './EventFilters.module.scss';
 
@@ -86,14 +86,13 @@ export const EventFilters = (props: EventFiltersProps) => {
                 />
             </div>
             {hasActiveFilters && (
-                <button
+                <Button
                     onClick={handleClearAll}
-                    className={styles.clear_button}
-                    type="button"
+                    variant={'secondary'}
                 >
                     <X size={16}/>
-                    Сбросить фильтры
-                </button>
+                    <span>Сбросить фильтры</span>
+                </Button>
             )}
         </div>
     );

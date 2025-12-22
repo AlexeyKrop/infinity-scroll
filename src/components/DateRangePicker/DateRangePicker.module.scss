@@ -186,17 +186,5 @@
 .clear_button {
   position: absolute;
   right: 8px;
-  padding: 4px;
-  background: none;
-  border: none;
-  color: base.$gray-500;
-  cursor: pointer;
-  transition: all base.$transition-base;
-  border-radius: base.$radius-sm;
   z-index: 1;
-
-  &:hover {
-    color: base.$red-500;
-    background: rgba(base.$red-500, 0.1);
-  }
 }

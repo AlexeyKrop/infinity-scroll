@@ -2,6 +2,7 @@ import type {ReactNode} from "react";
 import {Calendar, X} from 'lucide-react';
 import DatePicker, {CalendarContainer} from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import {Button} from "../Button/Button";
 
 
 import styles from './DateRangePicker.module.scss';
@@ -54,13 +55,14 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
                 wrapperClassName={styles.date_picker_wrapper_inner}
             />
             {startDate && (
-                <button
+                <Button
                     onClick={onClear}
+                    variant={'ghost'}
+                    size={'small'}
                     className={styles.clear_button}
-                    type="button"
                 >
                     <X size={14}/>
-                </button>
+                </Button>
             )}
         </div>
     );

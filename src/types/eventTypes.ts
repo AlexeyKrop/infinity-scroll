@@ -26,3 +26,11 @@ export type GetEventListResponse = {
     hasMore: boolean;
     total: number;
 }
+
+export type EventFilterURLParams = {
+    search?: string;
+    app?: string;
+    dateFrom?: string;
+    dateTo?: string;
+}
+
