@@ -25,3 +25,8 @@ npm run build
 ```bash
 npm run preview
 ```
+
+
+#### 1. HashRouter вместо BrowserRouter
+
+Используется `HashRouter` для совместимости с GitHub Pages
